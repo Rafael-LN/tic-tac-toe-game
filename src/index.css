@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: GlacialRegular, GlacialBold, GlacialItalic;
+}
+
+@font-face {
+    font-family: 'GlacialBold';;
+    src: url(./assets/fonts/glacialindifference-bold-webfont.woff);
+}
+
+@font-face {
+    font-family: 'GlacialItalic';;
+    src: url(./assets/fonts/glacialindifference-italic-webfont.woff);
+}
+
+@font-face {
+    font-family: 'GlacialRegular';;
+    src: url(./assets/fonts/glacialindifference-regular-webfont.woff);
+}
