@@ -1,6 +1,6 @@
-import Header from './components/header.component';
-import Footer from 'components/footer.component';
-import User from 'components/user.component';
+import Header from './components/Header/header.component';
+import Footer from 'components/Footer/footer.component';
+import User from 'components/User/user.component';
 
 function App() {
   return (
