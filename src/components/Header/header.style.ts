@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import color from "../styles/colors";
+import color from "../../styles/colors";
 
 export const HeaderContainer = styled.header`
     background-color: ${color.grey};
