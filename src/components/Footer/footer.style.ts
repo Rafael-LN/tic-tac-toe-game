@@ -53,7 +53,7 @@ export const Input = styled.input`
     ::placeholder {
         color: ${color.grey};
         font-size: 1rem;
-        font-family: GlacialRegular;
+        font-family: GlacialIndifferenceRegular;
     }
     
     :focus {
