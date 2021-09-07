@@ -20,19 +20,17 @@ export const TitlesWrapper = styled.div`
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     
 `
 
 export const Title = styled.span`
-    font-size: 1.2rem;
     font-family: GlacialBold;
 `
 
 export const SubTitle = styled.span`
-    font-size: 1.2rem;
     font-style: italic;
     margin-left: auto;
     margin-right: 0;
