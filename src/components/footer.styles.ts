@@ -31,12 +31,12 @@ export const SocialContainer = styled.div`
     justify-content: flex-start;
     margin-top: 1rem;
 
-    > svg {
+    > a {
         margin-right: 0.7rem;
     }
 `
 
-export const NewsletterContainer = styled.div`
+export const NewsletterContainer = styled.form`
     display: flex;
     margin-top: 1rem;
     height: 2rem;
@@ -69,6 +69,7 @@ export const SendContainer = styled.div`
     width: 2rem;
 
     > button {
+        padding: 1px;
         height: inherit;
         width: inherit;
         border-radius: 0;
