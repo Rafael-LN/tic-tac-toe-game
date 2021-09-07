@@ -1,4 +1,4 @@
-import React from 'react';
+import Footer from 'components/footer.component';
 import Header from './components/header.component';
 
 function App() {
@@ -6,6 +6,7 @@ function App() {
     <>
       <Header/>
       <div>SwordHealth</div>
+      <Footer/>
     </>
   );
 }
