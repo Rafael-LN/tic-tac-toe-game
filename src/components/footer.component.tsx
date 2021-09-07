@@ -2,7 +2,7 @@ import { ReactComponent as Facebook } from 'assets/images/facebook.svg';
 import { ReactComponent as Instagram } from 'assets/images/instagram.svg';
 import { ReactComponent as Twitter } from 'assets/images/twitter.svg';
 import { ReactComponent as Send } from 'assets/images/send.svg';
-import { FooterContainer, NewsletterContainer, Section, SocialContainer, Title, Input, SendContainer } from './footer.styles';
+import { FooterContainer, NewsletterContainer, Section, SocialContainer, Title, Input, SendContainer } from './footer.style';
 
 
 const Footer = () => {

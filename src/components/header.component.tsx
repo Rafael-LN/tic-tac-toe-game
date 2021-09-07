@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent as SwordHealthLogo } from 'assets/images/SWORD_Health_logo.svg';
-import { HeaderContainer, LogoWrapper, SubTitle, Title, TitlesWrapper } from './header.styles'
+import { HeaderContainer, LogoWrapper, SubTitle, Title, TitlesWrapper } from './header.style'
 
 const title = 'Frontend developer';
 const subTitle = 'Challenge';
