@@ -5,7 +5,8 @@ export const FooterContainer = styled.footer`
     background-color: ${color.white};
     height: 13rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 10rem;
 `
 
 export const Section = styled.div`

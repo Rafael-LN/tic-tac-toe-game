@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
     background-color: ${color.grey};
     height: 8rem;
     margin: 0;
-    padding: 0 6rem;
+    padding: 0 10rem;
     display: flex;
     flex-direction: row;
 `
