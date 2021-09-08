@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import color from "../../styles/colors";
+import color from "styles/colors";
 
 export const HeaderContainer = styled.header`
     background-color: ${color.grey};
@@ -27,7 +27,7 @@ export const TitlesWrapper = styled.div`
 `
 
 export const Title = styled.span`
-    font-family: GlacialBold;
+    font-family: GlacialIndifferenceBold;
 `
 
 export const SubTitle = styled.span`
