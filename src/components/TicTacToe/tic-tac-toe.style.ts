@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import color from "styles/colors";
-import { Col, Grid } from "react-flexbox-grid";
+import styled from 'styled-components'
+import { Col, Grid } from 'react-flexbox-grid'
+import color from '../../styles/colors'
 
 export const GameSection = styled.section`
     background-color: ${color.white};
@@ -9,7 +9,7 @@ export const GameSection = styled.section`
     align-items: center;
     margin: 2rem 0;
     font-family: GlacialIndifferenceBold;
-`;
+`
 
 export const Title = styled.h1`
     margin-top: 5rem;
@@ -49,4 +49,31 @@ export const Game = styled(Col)`
     height: 30rem;
     border: 0.2rem solid ${color.grey};
     background-color: white;
+    position: relative;
+`
+
+export const GameCell = styled.div`
+    border: 1px solid ${color.grey};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    > svg {
+        max-width: 100%;
+        height: auto;
+        height: 90%;
+        width: 90%;
+    }
+`
+
+export const BoardContainer = styled.div`
+    display: grid;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-color: rgba(255, 255, 255);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 `
