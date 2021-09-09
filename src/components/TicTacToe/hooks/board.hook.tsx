@@ -15,6 +15,7 @@ import {
     initialBoard,
     size,
 } from '../model/tic-tac-toe.default'
+import useTimer from './useTimer'
 
 const defaultValues: BoardProps = {
     board: initialBoard(),
@@ -35,11 +36,17 @@ const defaultValues: BoardProps = {
     isDraw: false,
     isWinner: () => false,
     endGame: noop,
+    winningGame: noop,
+    gameTime: '00:00:00',
+    matchTime: '00:00:00',
 }
 
 export const BoardContext = createContext<BoardProps>(defaultValues)
 
 export const BoardProvider: FC = ({ children }) => {
+    const { formattedTime: gameTime, stopTimer, resetTimer } = useTimer()
+    const { formattedTime: matchTime, stopTimer: stopMatchTimer } = useTimer()
+
     const [board, setBoard] = useState<Board>(initialBoard)
     const [status, setStatus] = useState(GameStatus.START)
     const [score, setScore] = useState(defaultScore)
@@ -53,6 +60,9 @@ export const BoardProvider: FC = ({ children }) => {
         setPlayerMoves(initialMoves)
         setWinnerCells([])
         setStatus(GameStatus.START)
+        resetTimer()
+
+        setPlayer(player === BoardValues.X ? BoardValues.O : BoardValues.X)
     }
 
     const isDraw = !board
@@ -97,6 +107,18 @@ export const BoardProvider: FC = ({ children }) => {
 
     const endGame = (): void => {
         setStatus(GameStatus.END)
+        stopMatchTimer()
+        stopTimer()
+
+        // TODO
+        // setTimeout(() => {
+        //     statisticsRef.current.scrollIntoView()
+        // }, 2000)
+    }
+
+    const winningGame = (): void => {
+        setScore({ ...score, [player]: score[player] + 1 })
+        resetBoard()
     }
 
     const boardContext = {
@@ -118,6 +140,9 @@ export const BoardProvider: FC = ({ children }) => {
         isDraw,
         isWinner,
         endGame,
+        winningGame,
+        gameTime,
+        matchTime,
     }
 
     return (
