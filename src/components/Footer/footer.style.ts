@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import color from "styles/colors";
+import styled from 'styled-components'
+import color from '../../styles/colors'
 
 export const FooterContainer = styled.footer`
     background-color: ${color.white};
@@ -16,7 +16,7 @@ export const Section = styled.div`
     margin-bottom: auto;
     line-height: 1.5rem;
     flex-direction: column;
-    
+
     > p {
         font-size: 0.9rem;
     }
@@ -49,17 +49,17 @@ export const Input = styled.input`
     background-color: white;
     width: 12rem;
     padding: 0.3rem 0.75rem;
-    
+
     ::placeholder {
         color: ${color.grey};
         font-size: 1rem;
         font-family: GlacialIndifferenceRegular;
     }
-    
+
     :focus {
         outline: none;
     }
-    
+
     :focus-visible {
         outline-color: ${color.grey};
     }

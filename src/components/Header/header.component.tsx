@@ -1,23 +1,27 @@
-import React from 'react'
-import { ReactComponent as SwordHealthLogo } from 'assets/images/SWORD_Health_logo.svg';
-import { HeaderContainer, LogoWrapper, SubTitle, Title, TitlesWrapper } from './header.style'
+import React, { FC } from 'react'
+import { ReactComponent as SwordHealthLogo } from '../../assets/images/SWORD_Health_logo.svg'
+import {
+    HeaderContainer,
+    LogoWrapper,
+    SubTitle,
+    Title,
+    TitlesWrapper,
+} from './header.style'
 
-const title = 'Frontend developer';
-const subTitle = 'Challenge';
+const title = 'Frontend developer'
+const subTitle = 'Challenge'
 
-const Header = () => {
+const Header: FC = () => {
     return (
         <HeaderContainer>
             <LogoWrapper>
-                <SwordHealthLogo/>
+                <SwordHealthLogo />
             </LogoWrapper>
 
             <TitlesWrapper>
                 <Title>{title}</Title>
                 <SubTitle>{subTitle}</SubTitle>
             </TitlesWrapper>
-
-            
         </HeaderContainer>
     )
 }

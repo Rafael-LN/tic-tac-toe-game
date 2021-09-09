@@ -1,13 +1,14 @@
-import { Col, Row } from "react-flexbox-grid"
-import { ReactComponent as Photo } from 'assets/images/photo.svg';
-import { UserContainer, UserDetails } from "./user.style";
+import React, { FC } from 'react'
+import { Col, Row } from 'react-flexbox-grid'
+import { ReactComponent as Photo } from '../../assets/images/photo.svg'
+import { UserContainer, UserDetails } from './user.style'
 
-const User = () => {
+const User: FC = () => {
     return (
         <UserContainer>
             <Row>
                 <Col xs={2}>
-                    <Photo height="200px" width="200px"/>
+                    <Photo height="200px" width="200px" />
                 </Col>
                 <UserDetails xs={6}>
                     <h3>Rafael Nunes</h3>

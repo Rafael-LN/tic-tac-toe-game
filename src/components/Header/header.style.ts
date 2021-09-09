@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import color from "styles/colors";
+import styled from 'styled-components'
+import color from '../../styles/colors'
 
 export const HeaderContainer = styled.header`
     background-color: ${color.grey};
@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
     flex-direction: row;
 `
 
-export const LogoWrapper = styled.div` 
+export const LogoWrapper = styled.div`
     margin-top: auto;
     margin-bottom: auto;
     width: 12rem;
@@ -23,7 +23,6 @@ export const TitlesWrapper = styled.div`
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
-    
 `
 
 export const Title = styled.span`

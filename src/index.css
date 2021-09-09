@@ -1,19 +1,20 @@
 body {
     margin: 0;
-    font-family: GlacialIndifferenceRegular, GlacialIndifferenceBold, GlacialIndifferenceItalic;
+    font-family: GlacialIndifferenceRegular, GlacialIndifferenceBold,
+        GlacialIndifferenceItalic;
 }
 
 @font-face {
-    font-family: 'GlacialIndifferenceBold';;
+    font-family: 'GlacialIndifferenceBold';
     src: url(./assets/fonts/glacialindifference-bold-webfont.woff);
 }
 
 @font-face {
-    font-family: 'GlacialIndifferenceItalic';;
+    font-family: 'GlacialIndifferenceItalic';
     src: url(./assets/fonts/glacialindifference-italic-webfont.woff);
 }
 
 @font-face {
-    font-family: 'GlacialIndifferenceRegular';;
+    font-family: 'GlacialIndifferenceRegular';
     src: url(./assets/fonts/glacialindifference-regular-webfont.woff);
 }
