@@ -1,9 +1,20 @@
-import GameBoard from "./gameBoard.component";
-import { GameSection, GameContainer, PlayerContainer, SubTitle, Title, Game } from "./tic-tac-toe.style";
+import React, { FC, useContext } from 'react'
+import GameBoard from './board.component'
+import { BoardContext } from './hook/board.hook'
+import { players } from './model/tic-tac-toe.default'
+import { BoardValues } from './model/tic-tac-toe.model'
+import {
+    GameSection,
+    GameContainer,
+    PlayerContainer,
+    SubTitle,
+    Title,
+    Game,
+} from './tic-tac-toe.style'
 
-const TicTacToe = () => {
-    const score1 = 0;
-    const score2 = 0;
+const TicTacToe: FC = () => {
+    const { score } = useContext(BoardContext)
+
     return (
         <GameSection>
             <Title>Tic Tac Toe games</Title>
@@ -11,15 +22,15 @@ const TicTacToe = () => {
 
             <GameContainer>
                 <PlayerContainer xs={2}>
-                    <p>Player 1</p>
-                    <p>{score1}</p>
+                    <p>Player {players[BoardValues.X]}</p>
+                    <p>{score[BoardValues.X]}</p>
                 </PlayerContainer>
-                <Game> 
+                <Game>
                     <GameBoard />
                 </Game>
                 <PlayerContainer xs={2}>
-                    <p>Player 2</p>
-                    <p>{score2}</p>
+                    <p>Player {players[BoardValues.O]}</p>
+                    <p>{score[BoardValues.O]}</p>
                 </PlayerContainer>
             </GameContainer>
         </GameSection>
