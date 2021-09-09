@@ -32,6 +32,7 @@ export interface Cell {
 export interface Score {
     [BoardValues.O]: number
     [BoardValues.X]: number
+    [BoardValues.EMPTY]: number
 }
 
 export interface Moves {
@@ -66,4 +67,7 @@ export interface BoardProps {
     isDraw: boolean
     isWinner: () => boolean
     endGame: () => void
+    winningGame: () => void
+    gameTime: string
+    matchTime: string
 }

@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react'
 import GameBoard from './board.component'
-import { BoardContext } from './hook/board.hook'
+import { BoardContext } from './hooks/board.hook'
 import { players } from './model/tic-tac-toe.default'
 import { BoardValues } from './model/tic-tac-toe.model'
 import {
@@ -10,16 +10,16 @@ import {
     SubTitle,
     Title,
     Game,
+    TimeWrapper,
 } from './tic-tac-toe.style'
 
 const TicTacToe: FC = () => {
-    const { score } = useContext(BoardContext)
+    const { score, gameTime } = useContext(BoardContext)
 
     return (
         <GameSection>
             <Title>Tic Tac Toe games</Title>
             <SubTitle>Welcome to the best game in the world.</SubTitle>
-
             <GameContainer>
                 <PlayerContainer xs={2}>
                     <p>Player {players[BoardValues.X]}</p>
@@ -33,6 +33,7 @@ const TicTacToe: FC = () => {
                     <p>{score[BoardValues.O]}</p>
                 </PlayerContainer>
             </GameContainer>
+            <TimeWrapper>{gameTime}</TimeWrapper>
         </GameSection>
     )
 }

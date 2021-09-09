@@ -77,3 +77,10 @@ export const BoardContainer = styled.div`
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
 `
+
+export const TimeWrapper = styled.span`
+    font-family: GlacialIndifferenceRegular;
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 5rem;
+`

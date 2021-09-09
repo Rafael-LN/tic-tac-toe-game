@@ -15,6 +15,7 @@ export const firstPlayer = BoardValues.X
 export const defaultScore: Score = {
     [BoardValues.X]: 0,
     [BoardValues.O]: 0,
+    [BoardValues.EMPTY]: 0,
 }
 
 export const players = {

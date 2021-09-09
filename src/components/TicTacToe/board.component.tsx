@@ -5,16 +5,17 @@ import { ReactComponent as O_DARK } from '../../assets/images/O_dark.svg'
 import { ReactComponent as X_BRIGHT } from '../../assets/images/X_bright.svg'
 import { ReactComponent as O_BRIGHT } from '../../assets/images/O_bright.svg'
 
-import { BoardContext } from './hook/board.hook'
+import { BoardContext } from './hooks/board.hook'
 
 import { BoardValues, CellColor, GameStatus } from './model/tic-tac-toe.model'
 import { BoardContainer, GameCell } from './tic-tac-toe.style'
-import { size } from './model/tic-tac-toe.default'
+import { maxMatches, size } from './model/tic-tac-toe.default'
 
 const Board: FC = () => {
     const {
         board,
         status,
+        score,
         player,
         playerMoves,
         winnerCells,
@@ -25,6 +26,8 @@ const Board: FC = () => {
         setStatus,
         resetBoard,
         setPlayer,
+        winningGame,
+        endGame,
     } = useContext(BoardContext)
 
     const token = {
@@ -47,10 +50,15 @@ const Board: FC = () => {
             setStatus(GameStatus.WIN)
 
             setTimeout(() => {
-                resetBoard()
+                if (score[player] + 1 > maxMatches / 2) {
+                    endGame()
+                    return
+                }
+                winningGame()
             }, 2000)
             return
         }
+
         if (isDraw) {
             setStatus(GameStatus.DRAW)
 
@@ -58,6 +66,7 @@ const Board: FC = () => {
                 resetBoard()
             }, 3000)
         }
+
         setPlayer(player === BoardValues.X ? BoardValues.O : BoardValues.X)
     }
 
