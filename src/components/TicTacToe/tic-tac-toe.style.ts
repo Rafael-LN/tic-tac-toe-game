@@ -76,7 +76,7 @@ export const BoardContainer = styled.div`
     height: 100%;
     width: 100%;
     opacity: 1;
-    background-color: rgba(255, 255, 255);
+    background-color: #ffffff;
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -87,4 +87,29 @@ export const TimeWrapper = styled.span`
     font-weight: 100;
     font-size: 2rem;
     margin-bottom: 5rem;
+`
+
+export const StatusContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    font-size: 4rem;
+
+    opacity: 1;
+    background-color: ${color.grey};
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    > p {
+        width: 90%;
+        text-align: center;
+    }
 `

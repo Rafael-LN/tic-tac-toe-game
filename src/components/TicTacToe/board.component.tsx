@@ -8,8 +8,8 @@ import { ReactComponent as O_BRIGHT } from '../../assets/images/O_bright.svg'
 import { BoardContext } from './hooks/board.hook'
 
 import { BoardValues, CellColor, GameStatus } from './model/tic-tac-toe.model'
-import { BoardContainer, GameCell } from './tic-tac-toe.style'
-import { maxMatches, size } from './model/tic-tac-toe.default'
+import { BoardContainer, GameCell, StatusContainer } from './tic-tac-toe.style'
+import { maxMatches, players, size } from './model/tic-tac-toe.default'
 
 const Board: FC = () => {
     const {
@@ -17,7 +17,6 @@ const Board: FC = () => {
         status,
         score,
         player,
-        history,
         playerMoves,
         winnerCells,
         isWinner,
@@ -25,7 +24,6 @@ const Board: FC = () => {
         setBoard,
         setPlayerMoves,
         setStatus,
-        setHistory,
         resetBoard,
         setPlayer,
         winningGame,
@@ -52,18 +50,21 @@ const Board: FC = () => {
             setStatus(GameStatus.WIN)
 
             setTimeout(() => {
+                winningGame()
                 if (score[player] + 1 > maxMatches / 2) {
                     endGame()
                     return
                 }
-                winningGame()
+                setPlayer(
+                    player === BoardValues.X ? BoardValues.O : BoardValues.X,
+                )
+                resetBoard()
             }, 2000)
             return
         }
 
         if (isDraw()) {
             setStatus(GameStatus.DRAW)
-            setHistory([...history, GameStatus.DRAW])
 
             setTimeout(() => {
                 resetBoard()
@@ -113,36 +114,62 @@ const Board: FC = () => {
         updateBoard()
     }
 
+    const renderStatus = () => {
+        if (status === GameStatus.START) {
+            return <></>
+        }
+
+        const textMapper = {
+            [GameStatus.START]: '',
+            [GameStatus.WIN]: '',
+            [GameStatus.DRAW]: 'Draw',
+            [GameStatus.END]: `Congrats Player ${players[player]}`,
+        }
+
+        if (!textMapper[status]) {
+            return <></>
+        }
+
+        return (
+            <StatusContainer>
+                <p>{textMapper[status]}</p>
+            </StatusContainer>
+        )
+    }
+
     return (
-        <BoardContainer>
-            {board.map((row, rowIndex) =>
-                row.map((cell, colIndex) => {
-                    const id = `C-${rowIndex}-${colIndex}`
+        <>
+            {renderStatus()}
+            <BoardContainer>
+                {board.map((row, rowIndex) =>
+                    row.map((cell, colIndex) => {
+                        const id = `C-${rowIndex}-${colIndex}`
 
-                    const isWin = winnerCells.some(
-                        (winnerCell) =>
-                            winnerCell.row === rowIndex &&
-                            winnerCell.col === colIndex,
-                    )
+                        const isWin = winnerCells.some(
+                            (winnerCell) =>
+                                winnerCell.row === rowIndex &&
+                                winnerCell.col === colIndex,
+                        )
 
-                    const cellToDraw = isWin
-                        ? token[cell.value][CellColor.BRIGHT]
-                        : token[cell.value][CellColor.DARK]
+                        const cellToDraw = isWin
+                            ? token[cell.value][CellColor.BRIGHT]
+                            : token[cell.value][CellColor.DARK]
 
-                    return (
-                        <GameCell
-                            key={id}
-                            id={id}
-                            onClick={playerMove}
-                            role="button"
-                            tabIndex={2 + size * rowIndex + colIndex}
-                        >
-                            {cell.value !== BoardValues.EMPTY && cellToDraw}
-                        </GameCell>
-                    )
-                }),
-            )}
-        </BoardContainer>
+                        return (
+                            <GameCell
+                                key={id}
+                                id={id}
+                                onClick={playerMove}
+                                role="button"
+                                tabIndex={2 + size * rowIndex + colIndex}
+                            >
+                                {cell.value !== BoardValues.EMPTY && cellToDraw}
+                            </GameCell>
+                        )
+                    }),
+                )}
+            </BoardContainer>
+        </>
     )
 }
 

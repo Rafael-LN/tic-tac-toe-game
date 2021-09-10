@@ -108,17 +108,11 @@ export const BoardProvider: FC = ({ children }) => {
         setStatus(GameStatus.END)
         stopMatchTimer()
         stopTimer()
-
-        // TODO
-        // setTimeout(() => {
-        //     statisticsRef.current.scrollIntoView()
-        // }, 2000)
     }
 
     const winningGame = (): void => {
         setScore({ ...score, [player]: score[player] + 1 })
         setHistory([...history, player])
-        resetBoard()
     }
 
     const boardContext = {
