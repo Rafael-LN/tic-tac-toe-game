@@ -1,20 +1,17 @@
-export type Board = Array<Array<BoardCell>>
-
 export enum CellColor {
     DARK = 'dark',
     BRIGHT = 'bright',
     EMPTY = 'empty',
 }
 
-export interface BoardCell {
-    value: BoardValues
-    color: CellColor
-}
-
 export enum BoardValues {
     X = 'X',
     O = 'O',
     EMPTY = 'E',
+}
+export interface BoardCell {
+    value: BoardValues
+    color: CellColor
 }
 
 export enum GameStatus {
@@ -48,6 +45,8 @@ export interface PlayerMoves {
     [BoardValues.EMPTY]: Moves
 }
 
+export type Board = Array<Array<BoardCell>>
+
 export interface BoardProps {
     board: Board
     setBoard: (board: Board) => void
@@ -64,7 +63,7 @@ export interface BoardProps {
     winnerCells: Array<Cell>
     setWinnerCells: (winnerCells: Array<Cell>) => void
     resetBoard: () => void
-    isDraw: boolean
+    isDraw: () => boolean
     isWinner: () => boolean
     endGame: () => void
     winningGame: () => void

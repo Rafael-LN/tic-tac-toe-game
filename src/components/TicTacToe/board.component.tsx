@@ -17,6 +17,7 @@ const Board: FC = () => {
         status,
         score,
         player,
+        history,
         playerMoves,
         winnerCells,
         isWinner,
@@ -24,6 +25,7 @@ const Board: FC = () => {
         setBoard,
         setPlayerMoves,
         setStatus,
+        setHistory,
         resetBoard,
         setPlayer,
         winningGame,
@@ -59,12 +61,13 @@ const Board: FC = () => {
             return
         }
 
-        if (isDraw) {
+        if (isDraw()) {
             setStatus(GameStatus.DRAW)
+            setHistory([...history, GameStatus.DRAW])
 
             setTimeout(() => {
                 resetBoard()
-            }, 3000)
+            }, 2000)
         }
 
         setPlayer(player === BoardValues.X ? BoardValues.O : BoardValues.X)

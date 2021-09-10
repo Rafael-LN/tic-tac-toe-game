@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import Stats from './components/Stats/stats.component'
 import Header from './components/Header/header.component'
 import Footer from './components/Footer/footer.component'
 import User from './components/User/user.component'
@@ -10,10 +11,13 @@ const App: FC = () => {
     return (
         <>
             <Header />
-            <User />
-            <BoardProvider>
-                <TicTacToe />
-            </BoardProvider>
+            <main>
+                <User />
+                <BoardProvider>
+                    <TicTacToe />
+                    <Stats />
+                </BoardProvider>
+            </main>
             <Footer />
         </>
     )

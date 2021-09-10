@@ -23,6 +23,10 @@ export const StatsArticle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const PlayerPercentage = styled.div`

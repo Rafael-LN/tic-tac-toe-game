@@ -7,10 +7,10 @@ const User: FC = () => {
     return (
         <UserContainer>
             <Row>
-                <Col xs={2}>
+                <Col xs={12} md={2}>
                     <Photo height="200px" width="200px" />
                 </Col>
-                <UserDetails xs={6}>
+                <UserDetails xs={12} md={6}>
                     <h3>Rafael Nunes</h3>
                     <ul>
                         <li>Age: 29</li>
@@ -18,7 +18,7 @@ const User: FC = () => {
                         <li>Occupation: Frontend Developer</li>
                     </ul>
                 </UserDetails>
-                <UserDetails xs={4}>
+                <UserDetails xs={12} md={4}>
                     <p>About me:</p>
                     <p>
                         My name is Rafael Nunes and I am a Frontend Developer

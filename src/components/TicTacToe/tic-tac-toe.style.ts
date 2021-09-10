@@ -30,6 +30,10 @@ export const GameContainer = styled(Grid)`
     width: 100%;
 
     margin: 5rem 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const PlayerContainer = styled(Col)`

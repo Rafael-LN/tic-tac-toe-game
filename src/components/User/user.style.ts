@@ -4,10 +4,16 @@ import { Col, Grid } from 'react-flexbox-grid'
 export const UserContainer = styled(Grid)`
     width: 100%;
     padding: 0 10rem;
-    margin: 3rem 0;
+    margin-bottom: 5rem;
+    margin-top: 10rem;
 
     > .row {
         align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 `
 
@@ -15,6 +21,11 @@ export const UserDetails = styled(Col)`
     text-align: left;
     font-size: 1.125rem;
     line-height: 1.75rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
 
     > h3 {
         font-size: 2.25rem;
@@ -28,5 +39,9 @@ export const UserDetails = styled(Col)`
 
     > p {
         text-align: right;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 `

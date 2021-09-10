@@ -32,10 +32,12 @@ const useTimer = (start = true): TimerProps => {
         if (start) {
             startTimer()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
         formatTimeHHMMSS()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timer])
 
     const stopTimer = (): void => {

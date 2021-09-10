@@ -33,7 +33,7 @@ const defaultValues: BoardProps = {
     winnerCells: [],
     setWinnerCells: noop,
     resetBoard: noop,
-    isDraw: false,
+    isDraw: () => false,
     isWinner: () => false,
     endGame: noop,
     winningGame: noop,
@@ -65,9 +65,8 @@ export const BoardProvider: FC = ({ children }) => {
         setPlayer(player === BoardValues.X ? BoardValues.O : BoardValues.X)
     }
 
-    const isDraw = !board
-        .flat()
-        .some((cell) => cell.value === BoardValues.EMPTY)
+    const isDraw = (): boolean =>
+        !board.flat().some((cell) => cell.value === BoardValues.EMPTY)
 
     const isWinner = (): boolean => {
         const cells = Array<Cell>(size).fill({ col: 0, row: 0 })
@@ -118,6 +117,7 @@ export const BoardProvider: FC = ({ children }) => {
 
     const winningGame = (): void => {
         setScore({ ...score, [player]: score[player] + 1 })
+        setHistory([...history, player])
         resetBoard()
     }
 

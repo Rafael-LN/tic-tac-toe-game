@@ -3,10 +3,15 @@ import color from '../../styles/colors'
 
 export const FooterContainer = styled.footer`
     background-color: ${color.white};
-    height: 13rem;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 10rem;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const Section = styled.div`
